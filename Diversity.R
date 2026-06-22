@@ -1,10 +1,10 @@
-setwd("~/Documents/University/Projects/Glasshouse/Stats")
+setwd("~")
 library("here")
 here()
 
 library("RXKCD")
 
-getXKCD(which = "random", display = TRUE, html = FALSE, saveImg = FALSE)
+getXKCD(which = "random", display = TRUE, html = FALSE, saveImg = FALSE) #start with a joke then get to coding
 #NMDS, Aplha and Beta diversity}
 library("vegan")
 library("dplyr")
