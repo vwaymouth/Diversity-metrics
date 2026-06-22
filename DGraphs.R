@@ -1,4 +1,4 @@
-setwd("~/Library/CloudStorage/OneDrive-TheUniversityofMelbourne/Documents/University/Glasshouse/Stats/")
+setwd("~/filepath")
 library("here")
 here()
 
@@ -14,7 +14,7 @@ library("devtools")
 fungi.df<-read.csv("diversity2.csv")
 
 pd <- position_dodge(0.5) # move them .05 to the left and right
-level_order <- c('P', 'RM')
+level_order <- c('P', 'RM')#makes sure graphs always show treatments in this order
 font.size<-10*96/72
 font.size.2<-4
 margin.top<-0.3
@@ -179,7 +179,7 @@ TM<-ggarrange(AbundEV1,AbundKL1,AbundME1,
               ShanEV1,ShanKL1, ShanME1, 
               ncol = 3, nrow = 3, common.legend = TRUE, legend="bottom")
 print(TM)
-ggsave("diversity.tiff", plot = TM, width = 30, height = 24, dpi = 600, units = "cm")
+ggsave("diversity.tiff", plot = TM, width = 30, height = 24, dpi = 600, units = "cm") #saves 9 plots as .tiff in directory
 ###########
 ####Funguild
 ###########
@@ -312,6 +312,7 @@ TM<-ggarrange(ATMPath1, ATMSap1, ATMSym1, AbundEV1,
               STMPath1, STMSap1, STMSym1, AbundME1,
                     ncol = 3, nrow = 3, common.legend = TRUE, legend="bottom")
 print(TM)
+ggsave("diversity.tiff", plot = TM, width = 30, height = 24, dpi = 600, units = "cm") #saves updated 9 plots as .tiff in directory
 
 AbundComp<-ggarrange(AAsco1, ABasi1, AGlom1, AMuc1, ARoze1, ARare1,
                      ncol = 2, nrow = 3, common.legend = TRUE, legend="bottom")
