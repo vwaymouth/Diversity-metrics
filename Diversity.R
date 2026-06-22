@@ -1,4 +1,4 @@
-setwd("~")
+setwd("~/filepath")
 library("here")
 here()
 
@@ -70,7 +70,7 @@ abund<-BASE.diversity%>%
     se=sd(Abundance)/sqrt(length(Abundance))
   )
 abund
-write.table(abund, file = "~/Library/CloudStorage/OneDrive-TheUniversityofmelbourne/Documents/University/Projects/Glasshouse/Stats//Tax abund sym ME.csv")
+write.table(abund, file = "~/filepath/local//Tax abund sym ME.csv")#saves table as .csv make sure name is searchable
 
 
 rich<-BASE.diversity%>%
@@ -82,7 +82,7 @@ rich<-BASE.diversity%>%
     se=sd(richness)/sqrt(length(richness))
   )
 rich
-write.table(rich, file = "~/Library/CloudStorage/OneDrive-TheUniversityofmelbourne/Documents/University/Glasshouse/Stats//Tax rich sym ME.csv")
+write.table(rich, file = "~/filepath/local//Tax rich sym ME.csv")#saves table as .csv make sure name is searchable
 
 shan<-BASE.diversity%>%
   group_by(Harvest, Inoculum) %>%
@@ -93,7 +93,10 @@ shan<-BASE.diversity%>%
     se=sd(Shannon)/sqrt(length(Shannon))
   )
 shan
-write.table(shan, file = "~/Library/CloudStorage/OneDrive-TheUniversityofmelbourne/Documents/University/Glasshouse/Stats//Shan sym ME.csv")
+write.table(shan, file = "~/filepath/local//Shan sym ME.csv")#saves table as .csv make sure name is searchable can do more tables if using all metrics
+
+##########
+#ANOVA of metric
 
 model1 <-  aov(Simpson$Abundance ~ BASE$Inoculum + BASE$Harvest + BASE$Inoculum:BASE$Harvest)
 summary(model1)
